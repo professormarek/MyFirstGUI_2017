@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 /**
  * This program implements a simple GUI for demonstration purposes.
  * We use the JPanel class to contain the windowed application.
- * .
+ *
  */
 public class MyFirstGUI extends JPanel implements ActionListener{
     //all GUI panels in Java need a unique identifier for the windowing system
@@ -23,7 +23,9 @@ public class MyFirstGUI extends JPanel implements ActionListener{
     //this label will display a result for the user - we declare it here, because we need to change its value later
     Label searchResult;
 
-    //let's create a constructor that sets up our GUI when the application is launched
+    /**
+     *     let's create a constructor that sets up our GUI when the application is launched
+     */
     public MyFirstGUI(){
         //create a layout within our MyFirstGUI JPanel
         //note: the layout itself is going to be contained within another JPanel
@@ -72,11 +74,20 @@ public class MyFirstGUI extends JPanel implements ActionListener{
 
     }
 
-    @Override
-    /*
-    this method is defined in ActionListener (which MyFirstGUI implements)
-    it receives an ActionEvent e object that we can inspect to determine what the action was
+    /**
+     * a getter to return the serial version id
+     * @return the serial version id
      */
+    public long getSerialVersionUID(){
+        return serialVersionUID;
+    }
+
+    /**
+     * this method is defined in ActionListener (which MyFirstGUI implements)
+     it receives an ActionEvent e object that we can inspect to determine what the action was
+     * @param e the even that occurred
+     */
+    @Override
     public void actionPerformed(ActionEvent e) {
         //invent an ActionCommand String - make sure that out searchButton uses the same String!
         if(e.getActionCommand() == "search_button_was_pressed"){
@@ -89,6 +100,8 @@ public class MyFirstGUI extends JPanel implements ActionListener{
             searchResult.setText("input text was: " + input);
         }
     }
+
+
 
     //let's instantiate our GUI from another class.
 
